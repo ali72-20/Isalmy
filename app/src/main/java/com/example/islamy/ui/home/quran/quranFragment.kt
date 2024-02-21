@@ -1,11 +1,14 @@
 package com.example.islamy.ui.home.quran
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.islamy.Constants.myConst
 import com.example.islamy.databinding.FragmentQueranBinding
+import com.example.islamy.ui.suraDeatails.SuraDetailsActivity
 
 class quranFragment : Fragment() {
     lateinit var viewBinding: FragmentQueranBinding
@@ -143,6 +146,16 @@ class quranFragment : Fragment() {
 
     private fun initChapterRecycler() {
         adapter = quranRecyclerViewAdapter(chapters)
+        adapter.onItemClickListner = quranRecyclerViewAdapter.OnItemClickListner { item, position ->
+            startSuraDetails(item,position)
+        }
         viewBinding.quranReyclerView.adapter = adapter
+    }
+
+    private fun startSuraDetails(item: String, position: Int) {
+        val intent = Intent(activity, SuraDetailsActivity::class.java)
+        intent.putExtra(myConst.ChapterIndex, position + 1)
+        intent.putExtra(myConst.ChapterTitle,item)
+        startActivity(intent)
     }
 }

@@ -11,6 +11,10 @@ import java.util.StringTokenizer
 class quranRecyclerViewAdapter(val chapterList:List<String>) :
     RecyclerView.Adapter<quranRecyclerViewAdapter.myViewHolder>() {
 
+        var onItemClickListner : OnItemClickListner? = null
+        fun interface OnItemClickListner{
+            fun onItemClick(item:String, position: Int)
+        }
         class myViewHolder(private val itemBinind:ItemChaperTitleBinding) : RecyclerView.ViewHolder(
             itemBinind.root
         ){
@@ -33,6 +37,11 @@ class quranRecyclerViewAdapter(val chapterList:List<String>) :
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val title : String = chapterList[position]
         holder.bind(title)
+        onItemClickListner?.let {listner->
+            holder.itemView.setOnClickListener {
+               listner.onItemClick(title, position)
+            }
+        }
     }
 
 
