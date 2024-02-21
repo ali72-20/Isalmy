@@ -6,6 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.islamy.databinding.HadethTitleBinding
 
 class hadethAdapter(private val hadethList : List<String>) : RecyclerView.Adapter<hadethAdapter.myViewHolder>(){
+
+    var onItemClickListner : OnItemClickListner?=null
+    fun interface OnItemClickListner{
+        fun onItemClick(title:String, position: Int)
+    }
     class myViewHolder(private val itemBinding : HadethTitleBinding) : RecyclerView.ViewHolder(itemBinding.root){
         fun bind(hadethTitle : String){
             itemBinding.hadethTitle.text = hadethTitle
@@ -26,5 +31,10 @@ class hadethAdapter(private val hadethList : List<String>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val title = hadethList[position]
         holder.bind(title)
+        onItemClickListner?.let {listner->
+            holder.itemView.setOnClickListener {
+                listner.onItemClick(title,position)
+            }
+        }
     }
 }
