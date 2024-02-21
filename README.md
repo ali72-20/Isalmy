@@ -5,4 +5,4 @@ Native andriod Islamy app which has a
  - radio fragment
 
 usig xml file to design
-kotil for backend
+kotlin for backend
