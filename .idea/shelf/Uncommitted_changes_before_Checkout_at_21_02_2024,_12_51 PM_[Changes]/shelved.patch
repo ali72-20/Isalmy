@@ -1,0 +1,80 @@
+Index: app/src/main/java/com/example/islamy/ui/hadethDetails/HadethDetailsActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.islamy.ui.hadethDetails\n\nimport androidx.appcompat.app.AppCompatActivity\nimport android.os.Bundle\nimport com.example.islamy.R\n\nclass HadethDetailsActivity : AppCompatActivity() {\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.activity_hadeth_details)\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/islamy/ui/hadethDetails/HadethDetailsActivity.kt b/app/src/main/java/com/example/islamy/ui/hadethDetails/HadethDetailsActivity.kt
+--- a/app/src/main/java/com/example/islamy/ui/hadethDetails/HadethDetailsActivity.kt	(revision c6e7a45024cd27c5b655861c020e7bfa04a62916)
++++ b/app/src/main/java/com/example/islamy/ui/hadethDetails/HadethDetailsActivity.kt	(date 1708512662458)
+@@ -2,11 +2,33 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import com.example.islamy.Constants.myConst
+ import com.example.islamy.R
++import com.example.islamy.databinding.ActivityHadethDetailsBinding
+ 
+ class HadethDetailsActivity : AppCompatActivity() {
++    lateinit var binding:ActivityHadethDetailsBinding
++    var HadethIndex :Int = 0
++    lateinit var  HadethTitle : String
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        setContentView(R.layout.activity_hadeth_details)
++        binding = ActivityHadethDetailsBinding.inflate(layoutInflater)
++        setContentView(binding.root)
++        setSupportActionBar(binding.hadethToolBar)
++        HadethIndex = intent.getIntExtra(myConst.HadethIndex,0)
++        HadethTitle = intent.getStringExtra(myConst.HadethTitle)?:""
++        initVeiew()
++    }
++
++    private fun initVeiew() {
++       binding.hadethTitle.text = HadethTitle
++        title = null
++        supportActionBar?.setDisplayHomeAsUpEnabled(true)
++        supportActionBar?.setDisplayHomeAsUpEnabled(true)
++    }
++
++    override fun onSupportNavigateUp(): Boolean {
++        finish()
++        return super.onSupportNavigateUp()
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/islamy/constants/myConst.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/islamy/constants/myConst.kt b/app/src/main/java/com/example/islamy/constants/myConst.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/islamy/constants/myConst.kt	(revision c6e7a45024cd27c5b655861c020e7bfa04a62916)
++++ /dev/null	(revision c6e7a45024cd27c5b655861c020e7bfa04a62916)
+@@ -1,6 +0,0 @@
+-package com.example.islamy.Constants
+-
+-object myConst {
+-    const val ChapterTitle = "ChapterTitle"
+-    const val ChapterIndex = "ChapterIndex"
+-}
+\ No newline at end of file
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    id(\"com.android.application\")\n    id(\"org.jetbrains.kotlin.android\")\n}\n\nandroid {\n    namespace = \"com.example.islamy\"\n    compileSdk = 34\n\n    defaultConfig {\n        applicationId = \"com.example.islamy\"\n        minSdk = 24\n        targetSdk = 34\n        versionCode = 1\n        versionName = \"1.0\"\n\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            isMinifyEnabled = false\n            proguardFiles(\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\n                \"proguard-rules.pro\"\n            )\n        }\n    }\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_1_8\n        targetCompatibility = JavaVersion.VERSION_1_8\n    }\n    kotlinOptions {\n        jvmTarget = \"1.8\"\n    }\n    buildFeatures{\n        viewBinding = true\n    }\n}\n\ndependencies {\n\n    implementation(\"androidx.core:core-ktx:1.12.0\")\n    implementation(\"androidx.appcompat:appcompat:1.6.1\")\n    implementation(\"com.google.android.material:material:1.11.0\")\n    implementation(\"androidx.constraintlayout:constraintlayout:2.1.4\")\n    testImplementation(\"junit:junit:4.12\")\n//    testImplementation(\"junit:junit:4.13.2\")\n    androidTestImplementation(\"androidx.test.ext:junit:1.1.5\")\n    androidTestImplementation(\"androidx.test.espresso:espresso-core:3.5.1\")\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision c6e7a45024cd27c5b655861c020e7bfa04a62916)
++++ b/app/build.gradle.kts	(date 1708512657988)
+@@ -45,7 +45,7 @@
+     implementation("com.google.android.material:material:1.11.0")
+     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+     testImplementation("junit:junit:4.12")
+-//    testImplementation("junit:junit:4.13.2")
++    testImplementation("junit:junit:4.13.2")
+     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+ }
+\ No newline at end of file
