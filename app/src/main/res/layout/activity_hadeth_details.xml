@@ -31,7 +31,7 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_chapter_details"
+    <include layout="@layout/hadeth_content"
         android:id="@+id/hadeth_contnet"
         />
 </androidx.coordinatorlayout.widget.CoordinatorLayout >

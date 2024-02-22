@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.islamy.R
 import com.example.islamy.databinding.ActivityMainBinding
 import com.example.islamy.databinding.FragmentRadioBinding
+import com.example.islamy.ui.home.azkar.AzkarFragment
 import com.example.islamy.ui.home.hadeth.hadethFragment
 import com.example.islamy.ui.home.quran.quranFragment
 import com.example.islamy.ui.home.radio.radioFragment
@@ -35,7 +36,9 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav_hadeth -> {
                         hadethFragment()
                     }
-
+                    R.id.nav_azkar ->{
+                        AzkarFragment()
+                    }
                     R.id.nav_sebha -> {
                         sebhaFragment()
                     }

@@ -5,4 +5,7 @@
     <string name="sebha">Sebha</string>
     <string name="radio">Radio</string>
     <string name="islamy">Islamy</string>
+    <string name="azkar">Azkar</string>
+    <string name="azkar_elsabah">Azkar Elsabah</string>
+    <string name="azkar_elmasaa">Azkar Elmasaa</string>
 </resources>
