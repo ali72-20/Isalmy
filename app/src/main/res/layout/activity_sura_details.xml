@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg2"
-    tools:context=".ui.suraDeatails.suraDetailsActivity"
+    tools:context=".ui.suraDeatails.SuraDetailsActivity"
     >
 
     <com.google.android.material.appbar.AppBarLayout
