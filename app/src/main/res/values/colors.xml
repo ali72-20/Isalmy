@@ -5,4 +5,6 @@
     <color name="transparentcolor">#00000000</color>
     <color name="bottom_nav">#B7935F</color>
     <color name="bottom_nav_selector">@color/black</color>
+    <color name="textColor">@color/bottom_nav_selector</color>
+    <color name="scrollViewColor">#D7B791</color>
 </resources>

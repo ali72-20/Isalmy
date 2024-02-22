@@ -4,29 +4,28 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-
     <TextView
-        android:id="@+id/sura_verse"
+        android:id="@+id/hadeth_contnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="sura verse"
+        tools:text="Hadeth text"
         tools:textSize="24sp"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:padding="12dp"
+        android:padding="8dp"
         />
-
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sura_verse"
+        app:layout_constraintTop_toBottomOf="@id/hadeth_contnet"
         android:layout_marginTop="4dp"
         android:background="@color/bottom_nav"
-
         />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

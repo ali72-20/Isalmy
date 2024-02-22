@@ -2,7 +2,6 @@ package com.example.islamy.ui.suraDeatails
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.islamy.Constants.myConst
 import com.example.islamy.databinding.ActivitySuraDetailsBinding
 
 class SuraDetailsActivity : AppCompatActivity() {

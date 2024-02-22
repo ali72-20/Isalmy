@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.islamy.Constants.myConst
+import com.example.islamy.ui.suraDeatails.myConst
 import com.example.islamy.databinding.FragmentQueranBinding
 import com.example.islamy.ui.suraDeatails.SuraDetailsActivity
 

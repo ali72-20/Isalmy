@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.hadethDetails.HadethDetailsActivity">
+    android:background="@drawable/bg2"
+    tools:context=".ui.hadethDetails.HadethDetailsActivity"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/hadeth_app_Bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparentcolor"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/hadethToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparentcolor"
+            >
+            <TextView
+                android:id="@+id/hadeth_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/hadeth_content"
+        android:id="@+id/hadeth_contnet"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout >
