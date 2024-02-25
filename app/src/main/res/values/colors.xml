@@ -7,4 +7,7 @@
     <color name="bottom_nav_selector">@color/black</color>
     <color name="textColor">@color/bottom_nav_selector</color>
     <color name="scrollViewColor">#D7B791</color>
+    <color name="counter_bg">#B7935F</color>
+    <color name="zekr_bg">@color/bottom_nav</color>
+    <color name="zekr_color">@color/white</color>
 </resources>

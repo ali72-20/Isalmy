@@ -4,4 +4,7 @@
     <color name="bottom_nav_selector">#FACC1D</color>
     <color name="textColor">@color/bottom_nav_selector</color>
     <color name="scrollViewColor">#15253f</color>
+    <color name="counter_bg">#141A2E</color>
+    <color name="zekr_bg">@color/bottom_nav_selector</color>
+    <color name="zekr_color">@color/black</color>
 </resources>

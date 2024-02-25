@@ -8,4 +8,13 @@
     <string name="azkar">Azkar</string>
     <string name="azkar_elsabah">Azkar Elsabah</string>
     <string name="azkar_elmasaa">Azkar Elmasaa</string>
+    <string name="tasbih_counter">Tasbih counter</string>
+    <array name="azkarList">
+        <item>سبحان الله</item>
+        <item>الحمد لله</item>
+        <item>لا اله الا الله</item>
+        <item>الله اكبر</item>
+        <item>استغفر الله</item>
+        <item> لا حول ولا قوة الا بالله</item>
+    </array>
 </resources>
